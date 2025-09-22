@@ -1,0 +1,39 @@
+syntax = "proto3";
+package bookservice;
+
+service Library {
+    rpc SearchBook (SearchBookRequest) returns (SearchBookResponse);
+    rpc CheckoutBook (CheckoutBookRequest) returns (CheckoutBookResponse);
+}
+
+message BookCopy {
+    string uuid = 1;
+    string author = 2;
+    string title = 3;
+    string genre = 4;
+    bool isAvaliable = 5;
+    string condition = 6;  
+}
+
+message SearchBookRequest {
+    string bookName = 1;
+    string bookAuthor = 2;
+    string bookGenre = 3;
+}
+
+message SearchBookResponse {
+    repeated BookCopy avaliableCopies = 1;
+}
+
+message CheckoutBookRequest {
+    string userId = 1;
+    string copyUuid = 2;
+    int32 loanTime = 3;
+}
+
+message CheckoutBookResponse {
+    string loanId = 1;
+    string dueDate = 2;
+    string bookTitle = 3;
+    string bookAuthor = 4;
+}

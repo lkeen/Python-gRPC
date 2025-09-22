@@ -1,1 +1,1 @@
-# Python-gRPC
+A simple Python gRPC microservice for managing library books with MySQL database backend. Features book search by title/author/genre and checkout functionality with individual copy tracking.
