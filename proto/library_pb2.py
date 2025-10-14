@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/library.proto\x12\x0b\x62ookservice\"n\n\x08\x42ookCopy\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\r\n\x05genre\x18\x04 \x01(\t\x12\x13\n\x0bisAvaliable\x18\x05 \x01(\x08\x12\x11\n\tcondition\x18\x06 \x01(\t\"L\n\x11SearchBookRequest\x12\x10\n\x08\x62ookName\x18\x01 \x01(\t\x12\x12\n\nbookAuthor\x18\x02 \x01(\t\x12\x11\n\tbookGenre\x18\x03 \x01(\t\"D\n\x12SearchBookResponse\x12.\n\x0f\x61valiableCopies\x18\x01 \x03(\x0b\x32\x15.bookservice.BookCopy\"I\n\x13\x43heckoutBookRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x10\n\x08\x63opyUuid\x18\x02 \x01(\t\x12\x10\n\x08loanTime\x18\x03 \x01(\x05\"^\n\x14\x43heckoutBookResponse\x12\x0e\n\x06loanId\x18\x01 \x01(\t\x12\x0f\n\x07\x64ueDate\x18\x02 \x01(\t\x12\x11\n\tbookTitle\x18\x03 \x01(\t\x12\x12\n\nbookAuthor\x18\x04 \x01(\t2\xad\x01\n\x07Library\x12M\n\nSearchBook\x12\x1e.bookservice.SearchBookRequest\x1a\x1f.bookservice.SearchBookResponse\x12S\n\x0c\x43heckoutBook\x12 .bookservice.CheckoutBookRequest\x1a!.bookservice.CheckoutBookResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/library.proto\x12\x0b\x62ookservice\"n\n\x08\x42ookCopy\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\r\n\x05genre\x18\x04 \x01(\t\x12\x13\n\x0bisAvaliable\x18\x05 \x01(\x08\x12\x11\n\tcondition\x18\x06 \x01(\t\"L\n\x11SearchBookRequest\x12\x10\n\x08\x62ookName\x18\x01 \x01(\t\x12\x12\n\nbookAuthor\x18\x02 \x01(\t\x12\x11\n\tbookGenre\x18\x03 \x01(\t\"D\n\x12SearchBookResponse\x12.\n\x0f\x61valiableCopies\x18\x01 \x03(\x0b\x32\x15.bookservice.BookCopy\"I\n\x13\x43heckoutBookRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x10\n\x08\x63opyUuid\x18\x02 \x01(\t\x12\x10\n\x08loanTime\x18\x03 \x01(\x05\"^\n\x14\x43heckoutBookResponse\x12\x0e\n\x06loanId\x18\x01 \x01(\t\x12\x0f\n\x07\x64ueDate\x18\x02 \x01(\t\x12\x11\n\tbookTitle\x18\x03 \x01(\t\x12\x12\n\nbookAuthor\x18\x04 \x01(\t\"%\n\x11ReturnBookRequest\x12\x10\n\x08\x63opyUuid\x18\x01 \x01(\t\"%\n\x12ReturnBookResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"T\n\x11\x43reateBookRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x02 \x01(\t\x12\r\n\x05genre\x18\x03 \x01(\t\x12\x11\n\tcondition\x18\x04 \x01(\t\"\"\n\x12\x43reateBookResponse\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"6\n\x0fGetBookResponse\x12#\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x15.bookservice.BookCopy\"b\n\x11UpdateBookRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\r\n\x05genre\x18\x04 \x01(\t\x12\x11\n\tcondition\x18\x05 \x01(\t\"%\n\x12UpdateBookResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"!\n\x11\x44\x65leteBookRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"%\n\x12\x44\x65leteBookResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\x14\n\x12GetAllBooksRequest\";\n\x13GetAllBooksResponse\x12$\n\x05\x62ooks\x18\x01 \x03(\x0b\x32\x15.bookservice.BookCopy\"\x1c\n\x1aGetInventorySummaryRequest\"b\n\x1bGetInventorySummaryResponse\x12\x12\n\ntotalBooks\x18\x01 \x01(\x05\x12\x16\n\x0e\x61vailableBooks\x18\x02 \x01(\x05\x12\x17\n\x0f\x63heckedOutBooks\x18\x03 \x01(\x05\x32\xeb\x05\n\x07Library\x12M\n\nSearchBook\x12\x1e.bookservice.SearchBookRequest\x1a\x1f.bookservice.SearchBookResponse\x12S\n\x0c\x43heckoutBook\x12 .bookservice.CheckoutBookRequest\x1a!.bookservice.CheckoutBookResponse\x12M\n\nReturnBook\x12\x1e.bookservice.ReturnBookRequest\x1a\x1f.bookservice.ReturnBookResponse\x12M\n\nCreateBook\x12\x1e.bookservice.CreateBookRequest\x1a\x1f.bookservice.CreateBookResponse\x12\x44\n\x07GetBook\x12\x1b.bookservice.GetBookRequest\x1a\x1c.bookservice.GetBookResponse\x12M\n\nUpdateBook\x12\x1e.bookservice.UpdateBookRequest\x1a\x1f.bookservice.UpdateBookResponse\x12M\n\nDeleteBook\x12\x1e.bookservice.DeleteBookRequest\x1a\x1f.bookservice.DeleteBookResponse\x12P\n\x0bGetAllBooks\x12\x1f.bookservice.GetAllBooksRequest\x1a .bookservice.GetAllBooksResponse\x12h\n\x13GetInventorySummary\x12\'.bookservice.GetInventorySummaryRequest\x1a(.bookservice.GetInventorySummaryResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +41,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CHECKOUTBOOKREQUEST']._serialized_end=369
   _globals['_CHECKOUTBOOKRESPONSE']._serialized_start=371
   _globals['_CHECKOUTBOOKRESPONSE']._serialized_end=465
-  _globals['_LIBRARY']._serialized_start=468
-  _globals['_LIBRARY']._serialized_end=641
+  _globals['_RETURNBOOKREQUEST']._serialized_start=467
+  _globals['_RETURNBOOKREQUEST']._serialized_end=504
+  _globals['_RETURNBOOKRESPONSE']._serialized_start=506
+  _globals['_RETURNBOOKRESPONSE']._serialized_end=543
+  _globals['_CREATEBOOKREQUEST']._serialized_start=545
+  _globals['_CREATEBOOKREQUEST']._serialized_end=629
+  _globals['_CREATEBOOKRESPONSE']._serialized_start=631
+  _globals['_CREATEBOOKRESPONSE']._serialized_end=665
+  _globals['_GETBOOKREQUEST']._serialized_start=667
+  _globals['_GETBOOKREQUEST']._serialized_end=697
+  _globals['_GETBOOKRESPONSE']._serialized_start=699
+  _globals['_GETBOOKRESPONSE']._serialized_end=753
+  _globals['_UPDATEBOOKREQUEST']._serialized_start=755
+  _globals['_UPDATEBOOKREQUEST']._serialized_end=853
+  _globals['_UPDATEBOOKRESPONSE']._serialized_start=855
+  _globals['_UPDATEBOOKRESPONSE']._serialized_end=892
+  _globals['_DELETEBOOKREQUEST']._serialized_start=894
+  _globals['_DELETEBOOKREQUEST']._serialized_end=927
+  _globals['_DELETEBOOKRESPONSE']._serialized_start=929
+  _globals['_DELETEBOOKRESPONSE']._serialized_end=966
+  _globals['_GETALLBOOKSREQUEST']._serialized_start=968
+  _globals['_GETALLBOOKSREQUEST']._serialized_end=988
+  _globals['_GETALLBOOKSRESPONSE']._serialized_start=990
+  _globals['_GETALLBOOKSRESPONSE']._serialized_end=1049
+  _globals['_GETINVENTORYSUMMARYREQUEST']._serialized_start=1051
+  _globals['_GETINVENTORYSUMMARYREQUEST']._serialized_end=1079
+  _globals['_GETINVENTORYSUMMARYRESPONSE']._serialized_start=1081
+  _globals['_GETINVENTORYSUMMARYRESPONSE']._serialized_end=1179
+  _globals['_LIBRARY']._serialized_start=1182
+  _globals['_LIBRARY']._serialized_end=1929
 # @@protoc_insertion_point(module_scope)

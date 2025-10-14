@@ -44,6 +44,41 @@ class LibraryStub(object):
                 request_serializer=proto_dot_library__pb2.CheckoutBookRequest.SerializeToString,
                 response_deserializer=proto_dot_library__pb2.CheckoutBookResponse.FromString,
                 _registered_method=True)
+        self.ReturnBook = channel.unary_unary(
+                '/bookservice.Library/ReturnBook',
+                request_serializer=proto_dot_library__pb2.ReturnBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.ReturnBookResponse.FromString,
+                _registered_method=True)
+        self.CreateBook = channel.unary_unary(
+                '/bookservice.Library/CreateBook',
+                request_serializer=proto_dot_library__pb2.CreateBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.CreateBookResponse.FromString,
+                _registered_method=True)
+        self.GetBook = channel.unary_unary(
+                '/bookservice.Library/GetBook',
+                request_serializer=proto_dot_library__pb2.GetBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.GetBookResponse.FromString,
+                _registered_method=True)
+        self.UpdateBook = channel.unary_unary(
+                '/bookservice.Library/UpdateBook',
+                request_serializer=proto_dot_library__pb2.UpdateBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.UpdateBookResponse.FromString,
+                _registered_method=True)
+        self.DeleteBook = channel.unary_unary(
+                '/bookservice.Library/DeleteBook',
+                request_serializer=proto_dot_library__pb2.DeleteBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.DeleteBookResponse.FromString,
+                _registered_method=True)
+        self.GetAllBooks = channel.unary_unary(
+                '/bookservice.Library/GetAllBooks',
+                request_serializer=proto_dot_library__pb2.GetAllBooksRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.GetAllBooksResponse.FromString,
+                _registered_method=True)
+        self.GetInventorySummary = channel.unary_unary(
+                '/bookservice.Library/GetInventorySummary',
+                request_serializer=proto_dot_library__pb2.GetInventorySummaryRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.GetInventorySummaryResponse.FromString,
+                _registered_method=True)
 
 
 class LibraryServicer(object):
@@ -61,6 +96,48 @@ class LibraryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReturnBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAllBooks(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetInventorySummary(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LibraryServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -73,6 +150,41 @@ def add_LibraryServicer_to_server(servicer, server):
                     servicer.CheckoutBook,
                     request_deserializer=proto_dot_library__pb2.CheckoutBookRequest.FromString,
                     response_serializer=proto_dot_library__pb2.CheckoutBookResponse.SerializeToString,
+            ),
+            'ReturnBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReturnBook,
+                    request_deserializer=proto_dot_library__pb2.ReturnBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.ReturnBookResponse.SerializeToString,
+            ),
+            'CreateBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBook,
+                    request_deserializer=proto_dot_library__pb2.CreateBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.CreateBookResponse.SerializeToString,
+            ),
+            'GetBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBook,
+                    request_deserializer=proto_dot_library__pb2.GetBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.GetBookResponse.SerializeToString,
+            ),
+            'UpdateBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBook,
+                    request_deserializer=proto_dot_library__pb2.UpdateBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.UpdateBookResponse.SerializeToString,
+            ),
+            'DeleteBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBook,
+                    request_deserializer=proto_dot_library__pb2.DeleteBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.DeleteBookResponse.SerializeToString,
+            ),
+            'GetAllBooks': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAllBooks,
+                    request_deserializer=proto_dot_library__pb2.GetAllBooksRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.GetAllBooksResponse.SerializeToString,
+            ),
+            'GetInventorySummary': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInventorySummary,
+                    request_deserializer=proto_dot_library__pb2.GetInventorySummaryRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.GetInventorySummaryResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -129,6 +241,195 @@ class Library(object):
             '/bookservice.Library/CheckoutBook',
             proto_dot_library__pb2.CheckoutBookRequest.SerializeToString,
             proto_dot_library__pb2.CheckoutBookResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReturnBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/ReturnBook',
+            proto_dot_library__pb2.ReturnBookRequest.SerializeToString,
+            proto_dot_library__pb2.ReturnBookResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/CreateBook',
+            proto_dot_library__pb2.CreateBookRequest.SerializeToString,
+            proto_dot_library__pb2.CreateBookResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/GetBook',
+            proto_dot_library__pb2.GetBookRequest.SerializeToString,
+            proto_dot_library__pb2.GetBookResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/UpdateBook',
+            proto_dot_library__pb2.UpdateBookRequest.SerializeToString,
+            proto_dot_library__pb2.UpdateBookResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/DeleteBook',
+            proto_dot_library__pb2.DeleteBookRequest.SerializeToString,
+            proto_dot_library__pb2.DeleteBookResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAllBooks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/GetAllBooks',
+            proto_dot_library__pb2.GetAllBooksRequest.SerializeToString,
+            proto_dot_library__pb2.GetAllBooksResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetInventorySummary(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/bookservice.Library/GetInventorySummary',
+            proto_dot_library__pb2.GetInventorySummaryRequest.SerializeToString,
+            proto_dot_library__pb2.GetInventorySummaryResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -4,6 +4,13 @@ package bookservice;
 service Library {
     rpc SearchBook (SearchBookRequest) returns (SearchBookResponse);
     rpc CheckoutBook (CheckoutBookRequest) returns (CheckoutBookResponse);
+    rpc ReturnBook (ReturnBookRequest) returns (ReturnBookResponse);
+    rpc CreateBook (CreateBookRequest) returns (CreateBookResponse);
+    rpc GetBook (GetBookRequest) returns (GetBookResponse);
+    rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse);
+    rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse);
+    rpc GetAllBooks (GetAllBooksRequest) returns (GetAllBooksResponse);
+    rpc GetInventorySummary (GetInventorySummaryRequest) returns (GetInventorySummaryResponse);
 }
 
 message BookCopy {
@@ -36,4 +43,65 @@ message CheckoutBookResponse {
     string dueDate = 2;
     string bookTitle = 3;
     string bookAuthor = 4;
+}
+
+message ReturnBookRequest {
+    string copyUuid = 1;
+}
+
+message ReturnBookResponse {
+    bool success = 1;
+}
+
+message CreateBookRequest {
+    string title = 1;
+    string author = 2;
+    string genre = 3;
+    string condition = 4;
+}
+
+message CreateBookResponse {
+    string uuid = 1;
+}
+
+message GetBookRequest {
+    string uuid = 1;
+}
+
+message GetBookResponse {
+    BookCopy book = 1;
+}
+
+message UpdateBookRequest {
+    string uuid = 1;
+    string title = 2;
+    string author = 3;
+    string genre = 4;
+    string condition = 5;
+}
+
+message UpdateBookResponse {
+    bool success = 1;
+}
+
+message DeleteBookRequest {
+    string uuid = 1;
+}
+
+message DeleteBookResponse {
+    bool success = 1;
+}
+
+message GetAllBooksRequest {}
+
+message GetAllBooksResponse {
+    repeated BookCopy books = 1;
+}
+
+message GetInventorySummaryRequest {}
+
+message GetInventorySummaryResponse {
+    int32 totalBooks = 1;
+    int32 availableBooks = 2;
+    int32 checkedOutBooks = 3;
 }
